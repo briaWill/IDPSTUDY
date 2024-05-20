@@ -29,3 +29,13 @@ jobs:
       - name: Run tests
         run: |
           pytest
+      
+      - name: Deploy to Google App Engine
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+        run: |
+          echo ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} > $HOME/gcloud-key.json
+          gcloud auth activate-service-account --key-file=$HOME/gcloud-key.json
+          gcloud config set project ${{ secrets.GCP_PROJECT }}
+          gcloud app deploy --quiet
