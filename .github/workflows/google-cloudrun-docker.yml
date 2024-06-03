@@ -52,7 +52,7 @@ env:
   PROJECT_ID: esg-app-423917 # TODO: update Google Cloud project id
   GAR_NAME: gh-clearimpact
   GAR_LOCATION: us-central1 # TODO: update Artifact Registry location
-  SERVICE: ClearImpact # TODO: update Cloud Run service name
+  SERVICE: clear-impact # TODO: update Cloud Run service name
   REGION: us-central1 # TODO: update Cloud Run service region
 
 jobs:
