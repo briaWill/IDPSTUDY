@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy the requirements file into the container
 COPY requirements.txt requirements.txt
 
-EXPOSE 8080
+#EXPOSE 8080
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
